@@ -9,5 +9,3 @@ spring:
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/products/**
-          filters:
-            - StripPrefix=1
