@@ -1,0 +1,3 @@
+mensaje: "Hola desde la configuración centralizada"
+server:
+  port: 0 # Permite puertos dinámicos si lo deseas
