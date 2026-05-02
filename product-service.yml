@@ -1,3 +1,5 @@
 mensaje: "Hola desde la configuración centralizada"
-server:
-  port: 0 # Permite puertos dinámicos si lo deseas
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
