@@ -9,3 +9,7 @@ spring:
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/products/**
+        - id: product-ventas-route # Nueva ruta para el mismo servicio
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/ventas/**
