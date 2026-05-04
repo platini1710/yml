@@ -1,5 +1,5 @@
 server:
-  port: 8082  # El puerto donde corre en la Máquina 2
+  port: 8083  # El puerto donde corre en la Máquina 2
 
 spring:
   application:
@@ -16,5 +16,5 @@ eureka:
       defaultZone: http://172.31.37.213:8761/eureka/
   instance:
     # Esto le dice a Eureka qué puerto informar a los demás
-    nonSecurePort: 8082
+    nonSecurePort: 8083
     preferIpAddress: true
