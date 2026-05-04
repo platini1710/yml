@@ -10,5 +10,6 @@ eureka:
     serviceUrl:
       defaultZone: http://172.31.37.213:8761/eureka/
   instance:
-    prefer-ip-address: true # Para que Eureka use la IP y no el nombre del contenedor
-
+    # Esto le dice a Eureka qué puerto informar a los demás
+    nonSecurePort: 8082
+    preferIpAddress: true
