@@ -4,8 +4,6 @@ spring:
   cloud:
     gateway:
       routes:
-        # Tus otras rutas aquí...
-        
         - id: banco-bci-route
           uri: lb://BANCO-BCI  
           predicates:
