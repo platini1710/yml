@@ -17,4 +17,7 @@ spring:
         - id: banco-bci-route
           uri: lb://BANCO-BCI
           predicates:
-            - Path=/registro/usuario/**           
+            - Path=/registro/**
+          filters:
+            # Esto quita "/registro" y deja solo lo que viene después
+            - RewritePath=/registro/(?<segment>.*), /$\{segment}       
