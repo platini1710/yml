@@ -13,3 +13,8 @@ spring:
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/ventas/**
+ # NUEVA RUTA para el Banco (Agrega esto aquí)
+        - id: banco-bci-route
+          uri: lb://BANCO-BCI
+          predicates:
+            - Path=/registro/**           
