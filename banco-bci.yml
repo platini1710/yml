@@ -4,7 +4,12 @@ server:
 spring:
   application:
     name: banco-bci  # ESTO es lo que Eureka leerá para registrarlo
-  
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 eureka:
   client:
     serviceUrl:
