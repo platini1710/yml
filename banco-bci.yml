@@ -7,5 +7,5 @@ spring:
         - id: banco-bci-route
           uri: lb://BANCO-BCI  
           predicates:
-            - Path=/registro/** ```
+            - Path=/registro/**
 
