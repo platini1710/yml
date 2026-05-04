@@ -1,11 +1,14 @@
 server:
-  port: 8083
+  port: 8082  # El puerto donde corre en la Máquina 2
+
 spring:
-  cloud:
-    gateway:
-      routes:
-        - id: banco-bci-route
-          uri: lb://BANCO-BCI  
-          predicates:
-            - Path=/registro/**
+  application:
+    name: banco-bci  # ESTO es lo que Eureka leerá para registrarlo
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.31.37.213:8761/eureka/
+  instance:
+    prefer-ip-address: true # Para que Eureka use la IP y no el nombre del contenedor
 
