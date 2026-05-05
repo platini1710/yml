@@ -18,7 +18,3 @@ spring:
           uri: lb://banco-bci
           predicates:
             - Path=/consulta/**, /registro/**
-eureka:
-  client:
-    service-url:
-      defaultZone: http://172.31.37.213:8761/eureka/
