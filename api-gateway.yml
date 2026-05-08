@@ -13,17 +13,6 @@ spring:
     gateway:
       globalcors:
         add-to-simple-url-handler-mapping: true
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "http://3.134.109.117:8083" # <- Tu CORS arreglado
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
-            allowedHeaders: "*"
-            allowCredentials: true
       routes:
         - id: product-route
           uri: lb://PRODUCT-SERVICE
