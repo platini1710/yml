@@ -1,20 +1,44 @@
 server:
   port: 8081
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/ # <- ¡Esto salva al Gateway!
+
 spring:
   cloud:
     gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://3.134.109.117:8083" # <- Tu CORS arreglado
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
       routes:
         - id: product-route
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/products/**
-        - id: product-ventas-route # Nueva ruta para el mismo servicio
+        - id: product-ventas-route
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/ventas/**
- # NUEVA RUTA para el Banco (Agrega esto aquí)
         - id: banco-bci-route
           uri: lb://banco-bci
           predicates:
             - Path=/consulta/**, /registro/**
+
+# Opcional pero recomendado para ver qué falla
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
